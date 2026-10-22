@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vLLM Monitor — Privacy Policy</title>
+<style>
+:root {
+  --bg: #f7f8fb; --surface: #ffffff; --text: #1a2233; --text-muted: #4a5568;
+  --accent: #4f46e5; --border: #dfe3ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1320; --surface: #1a2234; --text: #e9edf5; --text-muted: #a6b0c3;
+    --accent: #8b93f8; --border: #2a3348;
+  }
+}
+body {
+  margin: 0; padding: 3rem 1.25rem; background: var(--bg); color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+main { max-width: 42rem; margin: 0 auto; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem; }
+h1 { font-size: 1.6rem; margin-top: 0; }
+h2 { font-size: 1.15rem; margin: 1.75rem 0 .5rem; }
+a { color: var(--accent); }
+ul { padding-left: 1.25rem; }
+.muted { color: var(--text-muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>vLLM Monitor — Privacy Policy</h1>
+  <p class="muted">Last updated: 2026-10-22</p>
+
+  <p>vLLM Monitor is a menu bar utility that displays live metrics from vLLM
+  inference servers. <strong>It collects no personal data.</strong> There are no
+  accounts, no analytics, no crash reporting, no advertising identifiers, and no
+  tracking of any kind. This matches the app's "Data Not Collected" privacy label
+  on the App Store.</p>
+
+  <h2>What leaves your Mac</h2>
+  <p>Nothing, except one thing you control directly: the app sends periodic HTTP(S)
+  GET requests to the Prometheus <code>/metrics</code> endpoint URLs <em>you</em>
+  configure, and reads the metrics they return. Those requests contain no
+  identifiers about you or your device; they are exactly the requests any
+  Prometheus-compatible client would make. The app contacts no other server.</p>
+
+  <h2>What is stored on your Mac</h2>
+  <p>All app data stays on your Mac, inside the app's sandboxed container under
+  <code>~/Library/Application Support/vLLMMonitor/</code>:</p>
+  <ul>
+    <li>your configured server instances and display preferences;</li>
+    <li>a local SQLite database of metric history used for the History window
+    charts and CSV exports;</li>
+    <li>lifetime counter totals (a small JSON file).</li>
+  </ul>
+  <p>This data is never uploaded, synced, or shared. Deleting the app removes it.</p>
+
+  <h2>Third parties</h2>
+  <p>The app contains no third-party SDKs or services. vLLM Monitor is an
+  unofficial, independent application: it is not affiliated with, endorsed by, or
+  sponsored by the vLLM project. "vLLM" is a trademark of the vLLM project.</p>
+
+  <h2>Questions</h2>
+  <p>Contact us at <a href="mailto:vllmmonitor@citadelofricks.ai">vllmmonitor@citadelofricks.ai</a>.
+  For help and bug reports, see the <a href="../support/vllmmonitor">support page</a>.</p>
+</main>
+</body>
+</html>

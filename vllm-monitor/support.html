@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vLLM Monitor — Support</title>
+<style>
+:root {
+  --bg: #f7f8fb; --surface: #ffffff; --text: #1a2233; --text-muted: #4a5568;
+  --accent: #4f46e5; --border: #dfe3ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1320; --surface: #1a2234; --text: #e9edf5; --text-muted: #a6b0c3;
+    --accent: #8b93f8; --border: #2a3348;
+  }
+}
+body {
+  margin: 0; padding: 3rem 1.25rem; background: var(--bg); color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+main { max-width: 42rem; margin: 0 auto; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem; }
+h1 { font-size: 1.6rem; margin-top: 0; }
+h2 { font-size: 1.15rem; margin: 1.75rem 0 .5rem; }
+a { color: var(--accent); }
+ul { padding-left: 1.25rem; }
+.muted { color: var(--text-muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>vLLM Monitor — Support</h1>
+  <p class="muted">Last updated: 2026-10-22</p>
+
+  <p>vLLM Monitor is an unofficial menu bar app for monitoring vLLM inference
+  servers through their Prometheus <code>/metrics</code> endpoints. It collects
+  nothing — see the <a href="../privacy/vllmmonitor">privacy policy</a>.</p>
+
+  <h2>Bug reports &amp; questions</h2>
+  <p>Email <a href="mailto:vllmmonitor@citadelofricks.ai">vllmmonitor@citadelofricks.ai</a>.
+  As a reply is faster with context, please include:</p>
+  <ul>
+    <li>the app version (shown in the About window) and your macOS version;</li>
+    <li>whether the problem happens with a real server or the built-in demo
+    instance (Settings → "Add Demo Instance" reproduces most UI issues with no
+    server at all);</li>
+    <li>for stats problems: your vLLM version and a short excerpt from your
+    server's <code>/metrics</code> page (redact anything sensitive);</li>
+    <li>for History/CSV problems: an exported CSV of the affected range, if you
+    can produce one.</li>
+  </ul>
+
+  <h2>Quick troubleshooting</h2>
+  <ul>
+    <li><strong>No stats appear</strong> — confirm the endpoint responds:
+    <code>curl http://your-server:8000/metrics</code>. The app is sandboxed and
+    follows Apple's network rules: plain HTTP works for localhost only; remote
+    servers need HTTPS with a valid certificate.</li>
+    <li><strong>Stats look wrong for your server</strong> — not every vLLM build
+    exposes every metric; missing metrics show as empty rather than zero.</li>
+  </ul>
+</main>
+</body>
+</html>
